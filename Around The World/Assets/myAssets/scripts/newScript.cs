@@ -9,7 +9,7 @@ public class newScript : MonoBehaviour
 
 
     void Awake() {
-        _originalPosition - transform.position;
+        _originalPosition = transform.position;
     }
 
 
