@@ -1,12 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class dragDrop : MonoBehaviour, IPointerDownHandler
+public class newScript : MonoBehaviour
 {
-    public void OnPointerDown(PointerEventData eventData)
-    { 
-        Debug.Log("Onpointerdowbn");
+    private bool _dragging, _placed;
+    private Vector2 _offset, _originalPosition;
+    public GameObject mince;
+
+
+    void Awake() {
+        _originalPosition = transform.position;
     }
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(!_dragging) return;
+        if (_placed) return; 
+
+        var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        transform.position = mousePosition - _offset;
+    }
+
+    void OnMouseDown() {
+
+        _dragging = true;
+
+        _offset = GetMousePos() - (Vector2)transform.position;
+
+    }
+
+    void OnMouseUp() {
+        if (Vector2.Distance(transform.position, mince.transform.position) < 2)
+        {
+            transform.position = mince.transform.position;
+            _placed = true;
+        }
+        else
+        {
+            transform.position = _originalPosition;
+            _dragging = false;  
+        }
+    }
+
+    Vector2 GetMousePos(){
+
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+
+
 }
+
+
