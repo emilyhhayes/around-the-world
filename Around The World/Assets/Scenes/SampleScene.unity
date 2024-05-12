@@ -394,6 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 851912647}
   - component: {fileID: 851912646}
+  - component: {fileID: 851912648}
   m_Layer: 0
   m_Name: eggs
   m_TagString: Untagged
@@ -461,6 +462,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851912648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851912645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b4afd73a68e3c4eae7fbac49cb75c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mince: {fileID: 1022771133}
+  crackedEggPrefab: {fileID: 2259443355086593053, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
 --- !u!1 &1002556300
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +637,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480342631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2259443355086593053, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
+  m_PrefabInstance: {fileID: 1670589418059615534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1480342637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480342631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de926292b3b908d49b5c5c5f22aa497c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseHeldDown: 0
 --- !u!1001 &1670589418059615534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,11 +669,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4957706236022942471, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.22
+      value: -7.38
       objectReference: {fileID: 0}
     - target: {fileID: 4957706236022942471, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: -3.96
       objectReference: {fileID: 0}
     - target: {fileID: 4957706236022942471, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -675,13 +708,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6549662780754980852, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
+      propertyPath: eggs
+      value: 
+      objectReference: {fileID: 851912645}
+    - target: {fileID: 6549662780754980852, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
       propertyPath: mince
       value: 
       objectReference: {fileID: 1022771133}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6549662780754980852, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2259443355086593053, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1480342637}
   m_SourcePrefab: {fileID: 100100000, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

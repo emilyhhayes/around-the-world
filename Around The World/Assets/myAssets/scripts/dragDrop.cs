@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class newScript : MonoBehaviour
+public class dragDrop : MonoBehaviour
 {
     private bool _dragging, _placed;
     private Vector2 _offset, _originalPosition;
     public GameObject mince;
+    private bool mouseHeldDown = false;
+    public GameObject crackedEggPrefab;
 
 
     void Awake() {
@@ -33,6 +35,14 @@ public class newScript : MonoBehaviour
     }
 
     void OnMouseDown() {
+
+        mouseHeldDown = true;
+        GameObject spawnedObject = Instantiate(crackedEggPrefab, transform.position, Quaternion.identity);
+
+        if (spawnedObject != null )
+        {
+            spawnedObject.GetComponent<transferMouseHold>().mouseHeldDown = true;
+        }
 
         _dragging = true;
 
