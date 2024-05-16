@@ -9,7 +9,11 @@ public class dragDrop : MonoBehaviour
     public GameObject mince;
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
+    public GameObject crackedEgg;
 
+    public GameObject choppedChives;
+    public GameObject chives;
+    private bool checkChives;
 
     void Awake() {
         _originalPosition = transform.position;
@@ -37,8 +41,17 @@ public class dragDrop : MonoBehaviour
     void OnMouseDown() {
 
         mouseHeldDown = true;
+        
+        
         GameObject spawnedObject = Instantiate(crackedEggPrefab, transform.position, Quaternion.identity);
 
+        if (crackedEgg != null)
+        {
+            crackedEgg.SetActive(true);
+        }
+          
+        
+        
         if (spawnedObject != null )
         {
             spawnedObject.GetComponent<transferMouseHold>().mouseHeldDown = true;

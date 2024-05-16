@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de926292b3b908d49b5c5c5f22aa497c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseHeldDown: 0
 --- !u!61 &641595471695220413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,3 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mince: {fileID: 0}
+  crackedEggPrefab: {fileID: 2259443355086593053}
