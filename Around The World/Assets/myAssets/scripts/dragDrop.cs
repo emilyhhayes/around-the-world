@@ -42,22 +42,21 @@ public class dragDrop : MonoBehaviour
 
         mouseHeldDown = true;
         
-        
-        GameObject spawnedObject = Instantiate(crackedEggPrefab, transform.position, Quaternion.identity);
+        if (checkChives)
+        {
+            choppedChives.SetActive(true);
 
-        if (crackedEgg != null)
+        }
+        
+
+        else if (crackedEgg != null)
         {
             crackedEgg.SetActive(true);
         }
           
         
         
-        if (spawnedObject != null )
-        {
-            spawnedObject.GetComponent<transferMouseHold>().mouseHeldDown = true;
-        }
-
-        _dragging = true;
+         _dragging = true;
 
         _offset = GetMousePos() - (Vector2)transform.position;
 
@@ -81,6 +80,20 @@ public class dragDrop : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GameObject == chives)
+        {
+            checkChives = true;
+        }
+    }
+
+     void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject == chives) 
+        {
+            checkChives = false;
+        }
+    }
 
 
 }
