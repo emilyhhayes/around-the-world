@@ -11,9 +11,6 @@ public class dragDrop : MonoBehaviour
     public GameObject crackedEggPrefab;
     public GameObject crackedEgg;
 
-    public GameObject choppedChives;
-    public GameObject chives;
-    private bool checkChives;
 
     void Awake() {
         _originalPosition = transform.position;
@@ -42,14 +39,7 @@ public class dragDrop : MonoBehaviour
 
         mouseHeldDown = true;
         
-        if (checkChives)
-        {
-            choppedChives.SetActive(true);
-
-        }
-        
-
-        else if (crackedEgg != null)
+        if (crackedEgg != null)
         {
             crackedEgg.SetActive(true);
         }
@@ -80,20 +70,6 @@ public class dragDrop : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.GameObject == chives)
-        {
-            checkChives = true;
-        }
-    }
-
-     void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject == chives) 
-        {
-            checkChives = false;
-        }
-    }
 
 
 }
