@@ -42,6 +42,7 @@ public class dragDrop : MonoBehaviour
         if (crackedEgg != null)
         {
             crackedEgg.SetActive(true);
+            
         }
           
         
