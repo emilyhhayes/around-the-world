@@ -5,6 +5,7 @@ using UnityEngine;
 public class ingredientManager : MonoBehaviour
 {
     public GameObject[] hideIngredients;
+    private List<recipesSO> waitingRecipeSOList;
 
     private void Awake()
     {
