@@ -1288,6 +1288,7 @@ MonoBehaviour:
   - {fileID: 1501734638}
   - {fileID: 192771291}
   - {fileID: 258792873}
+  recipeListSO: {fileID: 11400000, guid: fdef07921cc02404c9b47085d51c1a22, type: 2}
 --- !u!4 &1401778804
 Transform:
   m_ObjectHideFlags: 0
