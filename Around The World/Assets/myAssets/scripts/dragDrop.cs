@@ -39,9 +39,9 @@ public class dragDrop : MonoBehaviour
 
         mouseHeldDown = true;
         
-        if (crackedEgg != null)
+        if (crackedEggPrefab != null)
         {
-            crackedEgg.SetActive(true);
+            crackedEggPrefab.SetActive(true);
             
         }
           
