@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acba3c8e28615d41a06a239e736b021, type: 3}
   m_Name: choppedMushrooms
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  sprite: {fileID: 0}
-  ingredientName: 
+  prefab: {fileID: 4036924659195357094, guid: bf8f3a9ddc6a40441b42a07e94b789c6, type: 3}
+  sprite: {fileID: 21300000, guid: 18d8caa62a6613842a5c37e8cd870820, type: 3}
+  ingredientName: choppedMushrooms

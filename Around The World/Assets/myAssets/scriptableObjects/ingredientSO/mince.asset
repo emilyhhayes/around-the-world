@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acba3c8e28615d41a06a239e736b021, type: 3}
   m_Name: mince
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 248383424187048268, guid: ca66770790876954c82d1923cce2700d, type: 3}
   sprite: {fileID: 0}
-  ingredientName: 
+  ingredientName: mince

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acba3c8e28615d41a06a239e736b021, type: 3}
   m_Name: choppedChives
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  sprite: {fileID: 0}
-  ingredientName: 
+  prefab: {fileID: 1132578061955509739, guid: 59852fb8b6ec8b94290efa1cd656b030, type: 3}
+  sprite: {fileID: 21300000, guid: a952bc0600f5bee499324d1241a5a9cc, type: 3}
+  ingredientName: choppedChive
