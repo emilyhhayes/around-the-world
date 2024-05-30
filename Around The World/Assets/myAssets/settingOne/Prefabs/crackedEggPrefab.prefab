@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4957706236022942471}
   - component: {fileID: 4341934786217654351}
-  - component: {fileID: 6121994604559647458}
   - component: {fileID: 641595471695220413}
   - component: {fileID: 6549662780754980852}
+  - component: {fileID: 9063568085239884473}
   m_Layer: 0
   m_Name: crackedEggPrefab
   m_TagString: Untagged
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6121994604559647458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2259443355086593053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de926292b3b908d49b5c5c5f22aa497c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseHeldDown: 0
 --- !u!61 &641595471695220413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,3 +146,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mince: {fileID: 0}
   crackedEggPrefab: {fileID: 2259443355086593053}
+  crackedEgg: {fileID: 0}
+--- !u!114 &9063568085239884473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2259443355086593053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d183823fcefc9e24e8119535e8b9b2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientSO: {fileID: 11400000, guid: 00c1cc976a4b7dd4e9837866e307d527, type: 2}

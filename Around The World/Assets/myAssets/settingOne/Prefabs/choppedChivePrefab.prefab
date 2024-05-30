@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5071790036548645557}
   - component: {fileID: 2130445275096651676}
   - component: {fileID: 8740043259053594575}
+  - component: {fileID: -7095421355840800262}
   m_Layer: 0
   m_Name: choppedChivePrefab
   m_TagString: Untagged
@@ -146,3 +147,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &-7095421355840800262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428623346885728100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d183823fcefc9e24e8119535e8b9b2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientSO: {fileID: 11400000, guid: 3528818d7464ceb4f91f3f787a4223c8, type: 2}
