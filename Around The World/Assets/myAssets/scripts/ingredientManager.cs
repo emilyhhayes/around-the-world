@@ -39,7 +39,7 @@ public class ingredientManager : MonoBehaviour
         }
     }
 
-    public void checkRecipe(minceingredientObject minceingredientObject)
+    public void checkRecipe(minceingredientSO minceingredientObject)
     {
         for (int i = 0; i < waitingRecipeSOList.Count; i++)
         {
@@ -57,3 +57,4 @@ public class ingredientManager : MonoBehaviour
         }
     }
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

@@ -8,3 +8,4 @@ public class ingredientObjectListSO : ScriptableObject
 {
     public List<ingredientSO> ingredientObjectSOList;
 }
+                                                                        
