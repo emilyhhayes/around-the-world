@@ -8,6 +8,7 @@ public class ingredientObject : MonoBehaviour
 
     public ingredientSO GetingredientSO()
     {
+    
         return ingredientSO;
     }
 }

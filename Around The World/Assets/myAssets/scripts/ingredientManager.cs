@@ -8,6 +8,7 @@ public class ingredientManager : MonoBehaviour
 
     [SerializeField] private recipeListSO recipeListSO;
     [SerializeField] public ingredientSO minceIngredientSO;
+
     private List<recipesSO> waitingRecipeSOList;
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
@@ -40,38 +41,6 @@ public class ingredientManager : MonoBehaviour
         }
     }
 
-    public void checkRecipe(ingredientSO mince)
-
-    {
-
-        for (int i = 0; i < waitingRecipeSOList.Count; i++)
-
-        {
-
-            recipesSO waitingRecipeSO = waitingRecipeSOList[i];
-
-
-
-            if (waitingRecipeSO.ingredientSOList.Count == mince.get
-
-            {
-
-                //Has the same number of ingredients 
-
-                foreach (ingredientSO recipeingredientSO in waitingRecipeSO.ingredientObjectListSO)
-
-                {
-
-
-
-                }
-
-
-
-            }
-
-        }
-
-    }
+  
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
