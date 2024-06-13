@@ -8,16 +8,24 @@ public class checkRecipe : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other)
+
     {
-        IngredientObject ingredient = other.GetComponent<IngredientObject>();
+
+        ingredientObject ingredient = other.GetComponent<ingredientObject>();
+
         if (ingredient != null)
+
         {
-            ingredientsInBowl.Add(ingredient.ingredientSO);
-            Debug.Log(ingredient.ingredientSO.ingredientName + " added to the bowl.");
+
+            ingredientsInBowl.Add(ingredient.ingredientData);
+
+            Debug.Log(ingredient.ingredientData.ingredientName + " added to the bowl.");
+
         }
+
     }
 
-     public bool CheckRecipe(recipesSO recipe)
+    public bool CheckRecipe(recipesSO recipe)
     {
         if (ingredientsInBowl.Count != recipe.ingredientSOList.Count)
         {

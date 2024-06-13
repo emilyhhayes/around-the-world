@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ingredientObject : MonoBehaviour
 {
-    [SerializeField] private ingredientSO ingredientSO;
+    public ingredientSO ingredientData;
 
     public ingredientSO GetingredientSO()
     {
     
-        return ingredientSO;
+        return ingredientData;
     }
 }
