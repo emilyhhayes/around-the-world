@@ -308,6 +308,8 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1566645669}
   crackedEgg: {fileID: 1566645669}
+  bowl: {fileID: 0}
+  currentRecipe: {fileID: 0}
 --- !u!61 &88136014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -922,6 +924,8 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1574786271}
   crackedEgg: {fileID: 1574786271}
+  bowl: {fileID: 1022771134}
+  currentRecipe: {fileID: 11400000, guid: 811ce5c9c8198dd4792b481e004804a0, type: 2}
 --- !u!1 &1002556300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1015,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5751796795884164215, guid: ca66770790876954c82d1923cce2700d, type: 3}
   m_PrefabInstance: {fileID: 8235657979083713056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022771134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022771133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3498ccd854cad4792919df94f6f371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1139040401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1123,8 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 847316494}
   crackedEgg: {fileID: 847316494}
+  bowl: {fileID: 0}
+  currentRecipe: {fileID: 0}
 --- !u!114 &1139040405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1210,8 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1480342631}
   crackedEgg: {fileID: 0}
+  bowl: {fileID: 0}
+  currentRecipe: {fileID: 0}
 --- !u!4 &1480342646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4957706236022942471, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
@@ -1316,6 +1336,8 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 629947979}
   crackedEgg: {fileID: 629947979}
+  bowl: {fileID: 0}
+  currentRecipe: {fileID: 0}
 --- !u!61 &1575472880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1685,7 +1707,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5751796795884164215, guid: ca66770790876954c82d1923cce2700d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1022771134}
   m_SourcePrefab: {fileID: 100100000, guid: ca66770790876954c82d1923cce2700d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1700,7 +1725,7 @@ SceneRoots:
   - {fileID: 1139040403}
   - {fileID: 88136015}
   - {fileID: 1575472881}
-  - {fileID: 8235657979083713056}
   - {fileID: 258792875}
   - {fileID: 526084347}
   - {fileID: 18519451}
+  - {fileID: 8235657979083713056}

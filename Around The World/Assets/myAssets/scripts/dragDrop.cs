@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class dragDrop : MonoBehaviour
@@ -10,6 +11,8 @@ public class dragDrop : MonoBehaviour
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
     public GameObject crackedEgg;
+    public checkRecipe bowl;
+    public recipesSO currentRecipe; 
 
 
     void Awake() {
@@ -50,6 +53,27 @@ public class dragDrop : MonoBehaviour
          _dragging = true;
 
         _offset = GetMousePos() - (Vector2)transform.position;
+
+        if (bowl.CheckRecipe(currentRecipe))
+        {
+            Debug.Log("Recipe matches!");
+        }
+        else
+        {
+            Debug.Log("Recipe does not match.");
+        }
+
+        if (bowl == null)
+        {
+            Debug.LogError("Notworkingqueen");
+            return;
+        }
+
+        if (currentRecipe == null)
+        {
+            Debug.LogError("know its for the better :(");
+            return;
+        }
 
     }
 
