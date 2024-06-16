@@ -54,26 +54,7 @@ public class dragDrop : MonoBehaviour
 
         _offset = GetMousePos() - (Vector2)transform.position;
 
-        if (bowl.CheckRecipe(currentRecipe))
-        {
-            Debug.Log("Recipe matches!");
-        }
-        else
-        {
-            Debug.Log("Recipe does not match.");
-        }
 
-        if (bowl == null)
-        {
-            Debug.LogError("Notworkingqueen");
-            return;
-        }
-
-        if (currentRecipe == null)
-        {
-            Debug.LogError("know its for the better :(");
-            return;
-        }
 
     }
 
@@ -88,6 +69,17 @@ public class dragDrop : MonoBehaviour
             transform.position = _originalPosition;
             _dragging = false;  
         }
+
+        if (bowl.CheckRecipe(currentRecipe))
+        {
+            Debug.Log("Recipe matches!");
+        }
+        else
+        {
+            Debug.Log("Recipe does not match.");
+        }
+
+
     }
 
     Vector2 GetMousePos(){
