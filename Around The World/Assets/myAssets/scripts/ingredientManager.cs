@@ -37,7 +37,21 @@ public class ingredientManager : MonoBehaviour
             {
                 recipesSO waitingRecipeSO = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
                 Debug.Log(waitingRecipeSO.recipeName);
+
+
+                foreach ( in waitingRecipeSOList)
+                {
+
+                }
+
+
+                Debug.Log(waitingRecipeSO.ingredientSOList[0].ingredientName);
+                Debug.Log(waitingRecipeSO.ingredientSOList[1].ingredientName); //this prints the second element in the current recipe
+                
+
+
                 waitingRecipeSOList.Add(waitingRecipeSO);
+
             }
         }
     }

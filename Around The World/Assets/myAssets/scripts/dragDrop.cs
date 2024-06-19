@@ -10,9 +10,9 @@ public class dragDrop : MonoBehaviour
     public GameObject mince;
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
-    public GameObject crackedEgg;
-    public checkRecipe bowl;
-    public recipesSO currentRecipe; 
+    //public GameObject crackedEgg;
+    //public checkRecipe bowl;
+    //public recipesSO currentRecipe; 
 
 
     void Awake() {
@@ -63,6 +63,7 @@ public class dragDrop : MonoBehaviour
         {
             transform.position = mince.transform.position;
             _placed = true;
+            Debug.Log(crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName);
         }
         else
         {
@@ -70,14 +71,14 @@ public class dragDrop : MonoBehaviour
             _dragging = false;  
         }
 
-        if (bowl.CheckRecipe(currentRecipe))
-        {
-            Debug.Log("Recipe matches!");
-        }
-        else
-        {
-            Debug.Log("Recipe does not match.");
-        }
+        //if (bowl.CheckRecipe(currentRecipe))
+        //{
+        //    Debug.Log("Recipe matches!");
+        //}
+        //else
+        //{
+        //    Debug.Log("Recipe does not match.");
+        //}
 
 
     }
