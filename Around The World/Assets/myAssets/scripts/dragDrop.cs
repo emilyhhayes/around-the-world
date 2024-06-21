@@ -10,6 +10,7 @@ public class dragDrop : MonoBehaviour
     public GameObject mince;
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
+    public ingredientManager ingredientManager;
     //public GameObject crackedEgg;
     //public checkRecipe bowl;
     //public recipesSO currentRecipe; 

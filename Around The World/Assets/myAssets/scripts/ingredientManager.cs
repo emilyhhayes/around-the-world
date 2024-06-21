@@ -39,14 +39,15 @@ public class ingredientManager : MonoBehaviour
                 Debug.Log(waitingRecipeSO.recipeName);
 
 
-                foreach ( in waitingRecipeSOList)
+                for (int i=0; i < waitingRecipeSO.ingredientSOList.Count; i++)
                 {
-
+                    Debug.Log(waitingRecipeSO.ingredientSOList[i].ingredientName);
                 }
+               
 
 
-                Debug.Log(waitingRecipeSO.ingredientSOList[0].ingredientName);
-                Debug.Log(waitingRecipeSO.ingredientSOList[1].ingredientName); //this prints the second element in the current recipe
+                //Debug.Log(waitingRecipeSO.ingredientSOList[0].ingredientName);
+                //Debug.Log(waitingRecipeSO.ingredientSOList[1].ingredientName); //this prints the second element in the current recipe
                 
 
 
