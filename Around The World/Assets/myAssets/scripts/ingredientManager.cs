@@ -14,6 +14,7 @@ public class ingredientManager : MonoBehaviour
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 1;
+  
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class ingredientManager : MonoBehaviour
             obj.SetActive(false);
         }
     }
+
 
     private void Update()
     {
@@ -43,21 +45,43 @@ public class ingredientManager : MonoBehaviour
                 {
                     Debug.Log(waitingRecipeSO.ingredientSOList[i].ingredientName);
                 }
-               
-
-
-                //Debug.Log(waitingRecipeSO.ingredientSOList[0].ingredientName);
-                //Debug.Log(waitingRecipeSO.ingredientSOList[1].ingredientName); //this prints the second element in the current recipe
-                
-
 
                 waitingRecipeSOList.Add(waitingRecipeSO);
+
+
 
             }
         }
     }
 
+    public void CheckIngredients(List<string> droppedIngredients)
+    {
+        foreach (recipesSO recipe in waitingRecipeSOList)
+        {
+            bool allMatch = true;
 
-  
+            for (int i = 0; i < recipe.ingredientSOList.Count; i++)
+            {
+                string recipeIngredient = recipe.ingredientSOList[i].ingredientName;
+
+                if (!droppedIngredients.Contains(recipeIngredient))
+                {
+                    allMatch = false; break;
+                }
+            }
+
+            if (allMatch)
+            {
+                Debug.Log("All dropped ingredients match the recipe: " + recipe.recipeName);
+            }
+
+            else
+            {
+                Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
+            }
+        }
+    }
+
+
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

@@ -11,9 +11,7 @@ public class dragDrop : MonoBehaviour
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
     public ingredientManager ingredientManager;
-    //public GameObject crackedEgg;
-    //public checkRecipe bowl;
-    //public recipesSO currentRecipe; 
+    private List<string> droppedIngredients = new List<string>();
 
 
     void Awake() {
@@ -64,7 +62,12 @@ public class dragDrop : MonoBehaviour
         {
             transform.position = mince.transform.position;
             _placed = true;
-            Debug.Log(crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName);
+            string ingredientName = crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName;
+            Debug.Log(ingredientName);
+            droppedIngredients.Add(ingredientName);
+
+            CompareIngredients();
+            //Debug.Log(crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName);
         }
         else
         {
@@ -72,16 +75,21 @@ public class dragDrop : MonoBehaviour
             _dragging = false;  
         }
 
-        //if (bowl.CheckRecipe(currentRecipe))
-        //{
-        //    Debug.Log("Recipe matches!");
-        //}
-        //else
-        //{
-        //    Debug.Log("Recipe does not match.");
-        //}
 
 
+    }
+
+   private void CompareIngredients()
+    {
+        ingredientManager ingredientManager = FindObjectOfType<ingredientManager>();
+        if (ingredientManager != null)
+        {
+            ingredientManager.CheckIngredients(droppedIngredients);
+        }
+        else
+        {
+            Debug.LogError("notworkign");
+        }
     }
 
     Vector2 GetMousePos(){
