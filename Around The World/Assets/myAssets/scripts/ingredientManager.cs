@@ -58,6 +58,9 @@ public class ingredientManager : MonoBehaviour
     {
         foreach (recipesSO recipe in waitingRecipeSOList)
         {
+            Debug.Log("checkingrecipe" +  recipe.recipeName);
+            List<string> missingIngredient = new List<string>();
+            
             bool allMatch = true;
 
             for (int i = 0; i < recipe.ingredientSOList.Count; i++)
@@ -67,6 +70,7 @@ public class ingredientManager : MonoBehaviour
                 if (!droppedIngredients.Contains(recipeIngredient))
                 {
                     allMatch = false; break;
+                    missingIngredient.Add(recipeIngredient);
                 }
             }
 
@@ -78,6 +82,12 @@ public class ingredientManager : MonoBehaviour
             else
             {
                 Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
+
+                Debug.Log("Missing ingred");
+                foreach (string ingredient in missingIngredient)
+                {
+                    Debug.Log(ingredient);
+                }
             }
         }
     }
