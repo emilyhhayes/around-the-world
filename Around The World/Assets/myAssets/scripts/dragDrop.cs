@@ -11,7 +11,7 @@ public class dragDrop : MonoBehaviour
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
     public ingredientManager ingredientManager;
-    private List<string> droppedIngredients = new List<string>();
+    //public List<string> droppedIngredients = new List<string>();
 
 
     void Awake() {
@@ -58,13 +58,20 @@ public class dragDrop : MonoBehaviour
     }
 
     void OnMouseUp() {
+        ingredientManager ingredientManager = FindObjectOfType<ingredientManager>();
         if (Vector2.Distance(transform.position, mince.transform.position) < 2)
         {
             transform.position = mince.transform.position;
             _placed = true;
             string ingredientName = crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName;
             Debug.Log(ingredientName);
-            droppedIngredients.Add(ingredientName);
+            ingredientManager.addIngredients(ingredientName);
+            //droppedIngredients.Add(ingredientName);
+
+            //foreach (string droppedIngredientName in droppedIngredients)
+            //{
+            //    Debug.Log("in here is" + droppedIngredientName);   
+            //}
 
             CompareIngredients();
             //Debug.Log(crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName);
@@ -84,7 +91,7 @@ public class dragDrop : MonoBehaviour
         ingredientManager ingredientManager = FindObjectOfType<ingredientManager>();
         if (ingredientManager != null)
         {
-            ingredientManager.CheckIngredients(droppedIngredients);
+            ingredientManager.CheckIngredients();
         }
         else
         {

@@ -14,7 +14,7 @@ public class ingredientManager : MonoBehaviour
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 1;
-  
+    public List<string> droppedIngredients = new List<string>();
 
     private void Awake()
     {
@@ -54,12 +54,23 @@ public class ingredientManager : MonoBehaviour
         }
     }
 
-    public void CheckIngredients(List<string> droppedIngredients)
+    public void addIngredients(string ingredientName)
+    {
+        droppedIngredients.Add(ingredientName);
+
+        foreach (string droppedIngredientName in droppedIngredients)
+        {
+            Debug.Log("in here is" + droppedIngredientName);
+        }
+
+    }
+
+    public void CheckIngredients()
     {
         foreach (recipesSO recipe in waitingRecipeSOList)
         {
             Debug.Log("checkingrecipe" +  recipe.recipeName);
-            List<string> missingIngredient = new List<string>();
+            //List<string> missingIngredient = new List<string>();
             
             bool allMatch = true;
 
@@ -70,7 +81,7 @@ public class ingredientManager : MonoBehaviour
                 if (!droppedIngredients.Contains(recipeIngredient))
                 {
                     allMatch = false; break;
-                    missingIngredient.Add(recipeIngredient);
+                    //missingIngredient.Add(recipeIngredient);
                 }
             }
 
@@ -83,11 +94,11 @@ public class ingredientManager : MonoBehaviour
             {
                 Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
 
-                Debug.Log("Missing ingred");
-                foreach (string ingredient in missingIngredient)
-                {
-                    Debug.Log(ingredient);
-                }
+               // Debug.Log("Missing ingred");
+                //foreach (string ingredient in missingIngredient)
+               // {
+              //      Debug.Log("hey"+ingredient);
+               // }
             }
         }
     }
