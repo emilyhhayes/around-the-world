@@ -66,15 +66,10 @@ public class dragDrop : MonoBehaviour
             string ingredientName = crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName;
             Debug.Log(ingredientName);
             ingredientManager.addIngredients(ingredientName);
-            //droppedIngredients.Add(ingredientName);
 
-            //foreach (string droppedIngredientName in droppedIngredients)
-            //{
-            //    Debug.Log("in here is" + droppedIngredientName);   
-            //}
 
             CompareIngredients();
-            //Debug.Log(crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName);
+
         }
         else
         {
@@ -93,10 +88,7 @@ public class dragDrop : MonoBehaviour
         {
             ingredientManager.CheckIngredients();
         }
-        else
-        {
-            Debug.LogError("notworkign");
-        }
+
     }
 
     Vector2 GetMousePos(){

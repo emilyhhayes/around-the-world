@@ -15,6 +15,7 @@ public class ingredientManager : MonoBehaviour
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 1;
     public List<string> droppedIngredients = new List<string>();
+    public GameObject fillingBall; 
 
     private void Awake()
     {
@@ -70,7 +71,7 @@ public class ingredientManager : MonoBehaviour
         foreach (recipesSO recipe in waitingRecipeSOList)
         {
             Debug.Log("checkingrecipe" +  recipe.recipeName);
-            //List<string> missingIngredient = new List<string>();
+
             
             bool allMatch = true;
 
@@ -81,24 +82,23 @@ public class ingredientManager : MonoBehaviour
                 if (!droppedIngredients.Contains(recipeIngredient))
                 {
                     allMatch = false; break;
-                    //missingIngredient.Add(recipeIngredient);
+                   
                 }
             }
 
             if (allMatch)
             {
                 Debug.Log("All dropped ingredients match the recipe: " + recipe.recipeName);
+
+
+                fillingBall.SetActive(true);
             }
 
             else
             {
                 Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
 
-               // Debug.Log("Missing ingred");
-                //foreach (string ingredient in missingIngredient)
-               // {
-              //      Debug.Log("hey"+ingredient);
-               // }
+
             }
         }
     }
