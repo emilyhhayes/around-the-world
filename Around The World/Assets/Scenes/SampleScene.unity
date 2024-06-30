@@ -307,9 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1566645669}
-  crackedEgg: {fileID: 1566645669}
-  bowl: {fileID: 0}
-  currentRecipe: {fileID: 0}
+  ingredientManager: {fileID: 0}
 --- !u!61 &88136014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -942,9 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1574786271}
-  crackedEgg: {fileID: 1574786271}
-  bowl: {fileID: 1022771134}
-  currentRecipe: {fileID: 11400000, guid: 811ce5c9c8198dd4792b481e004804a0, type: 2}
+  ingredientManager: {fileID: 0}
 --- !u!1 &1002556300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,9 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 847316494}
-  crackedEgg: {fileID: 847316494}
-  bowl: {fileID: 0}
-  currentRecipe: {fileID: 0}
+  ingredientManager: {fileID: 0}
 --- !u!114 &1139040405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,6 +1188,8 @@ MonoBehaviour:
   - {fileID: 1574786271}
   recipeListSO: {fileID: 11400000, guid: fdef07921cc02404c9b47085d51c1a22, type: 2}
   minceIngredientSO: {fileID: 11400000, guid: 435eba2b4bfabc840b28e0f2d6735ffb, type: 2}
+  droppedIngredients: []
+  fillingBall: {fileID: 258792873}
 --- !u!4 &1401778804
 Transform:
   m_ObjectHideFlags: 0
@@ -1228,9 +1224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1480342631}
-  crackedEgg: {fileID: 2259443355086593053, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
-  bowl: {fileID: 1022771134}
-  currentRecipe: {fileID: 11400000, guid: 811ce5c9c8198dd4792b481e004804a0, type: 2}
+  ingredientManager: {fileID: 0}
 --- !u!4 &1480342646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4957706236022942471, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
@@ -1408,9 +1402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 629947979}
-  crackedEgg: {fileID: 629947979}
-  bowl: {fileID: 0}
-  currentRecipe: {fileID: 0}
+  ingredientManager: {fileID: 0}
 --- !u!61 &1575472880
 BoxCollider2D:
   m_ObjectHideFlags: 0

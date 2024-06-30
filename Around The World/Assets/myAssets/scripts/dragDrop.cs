@@ -11,7 +11,7 @@ public class dragDrop : MonoBehaviour
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
     public ingredientManager ingredientManager;
-    //public List<string> droppedIngredients = new List<string>();
+
 
 
     void Awake() {
