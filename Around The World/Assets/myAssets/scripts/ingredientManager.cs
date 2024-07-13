@@ -15,7 +15,23 @@ public class ingredientManager : MonoBehaviour
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 1;
     public List<string> droppedIngredients = new List<string>();
+    
     public GameObject fillingBall; 
+    public GameObject mince;
+    public GameObject wrapper;
+ 
+    
+    public dragDrop dragDrop; 
+    public List<GameObject> droppedObjects = new List<GameObject>();
+
+    public Vector3 newPosition;
+    public float movement = 2.5f;
+ 
+
+    void Start()
+    {
+        
+    }
 
     private void Awake()
     {
@@ -55,9 +71,10 @@ public class ingredientManager : MonoBehaviour
         }
     }
 
-    public void addIngredients(string ingredientName)
+    public void addIngredients(string ingredientName, GameObject ingredientObject)
     {
         droppedIngredients.Add(ingredientName);
+        droppedObjects.Add(ingredientObject);
 
         foreach (string droppedIngredientName in droppedIngredients)
         {
@@ -92,6 +109,20 @@ public class ingredientManager : MonoBehaviour
 
 
                 fillingBall.SetActive(true);
+
+                 foreach (GameObject obj in droppedObjects)
+                {
+                    Destroy(obj);
+                }
+
+                // Clear the lists after hiding the objects
+                droppedIngredients.Clear();
+                droppedObjects.Clear();
+            //wrapper.transform.position = new Vector3(2.44f, 2.03f, -0.04822773f); // Example new position
+          
+          StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
+           StartCoroutine(MoveToPosition(wrapper, newPosition, movement)); 
+
             }
 
             else
@@ -103,6 +134,20 @@ public class ingredientManager : MonoBehaviour
         }
     }
 
+ IEnumerator MoveToPosition(GameObject obj, Vector3 target, float movement)
+    {
+        Vector3 start = obj.transform.position;
+        float elapsedTime = 0;
+
+        while (elapsedTime < movement)
+        {
+            elapsedTime += Time.deltaTime;
+            obj.transform.position = Vector3.Lerp(start, target, elapsedTime / movement);
+            yield return null;
+        }
+
+        obj.transform.position = target;
+    }
 
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

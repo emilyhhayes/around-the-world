@@ -11,7 +11,7 @@ public class dragDrop : MonoBehaviour
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
     public ingredientManager ingredientManager;
-
+  
 
 
     void Awake() {
@@ -41,9 +41,13 @@ public class dragDrop : MonoBehaviour
 
         mouseHeldDown = true;
         
+        Debug.Log("Mouse down on: " + gameObject.name);
+
+        
         if (crackedEggPrefab != null)
         {
             crackedEggPrefab.SetActive(true);
+          
             
         }
           
@@ -51,8 +55,9 @@ public class dragDrop : MonoBehaviour
         
          _dragging = true;
 
-        _offset = GetMousePos() - (Vector2)transform.position;
+         
 
+        _offset = GetMousePos() - (Vector2)transform.position;
 
 
     }
@@ -65,7 +70,8 @@ public class dragDrop : MonoBehaviour
             _placed = true;
             string ingredientName = crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName;
             Debug.Log(ingredientName);
-            ingredientManager.addIngredients(ingredientName);
+            ingredientManager.addIngredients(ingredientName, crackedEggPrefab);
+        
 
 
             CompareIngredients();
@@ -77,6 +83,8 @@ public class dragDrop : MonoBehaviour
             _dragging = false;  
         }
 
+        
+        
 
 
     }
@@ -95,7 +103,6 @@ public class dragDrop : MonoBehaviour
 
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-
 
 
 }
