@@ -19,6 +19,7 @@ public class ingredientManager : MonoBehaviour
     public GameObject fillingBall; 
     public GameObject mince;
     public GameObject wrapper;
+    public GameObject assembleArea;
  
     
     public dragDrop dragDrop; 
@@ -27,7 +28,11 @@ public class ingredientManager : MonoBehaviour
 
     public Vector3 newPosition;
     public float movement = 2.5f;
- 
+
+    private Collider2D wrapperCollider;
+    private Collider2D assembleAreaCollider;
+    private bool isMouseHeldDown;
+
 
     void Start()
     {
@@ -70,7 +75,23 @@ public class ingredientManager : MonoBehaviour
 
             }
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            isMouseHeldDown = true; 
+        }
+
+        else
+        {
+            isMouseHeldDown = false;
+        }
+
     }
+
+
+
+
+
 
     public void addIngredients(string ingredientName, GameObject ingredientObject)
     {
@@ -121,8 +142,16 @@ public class ingredientManager : MonoBehaviour
                 droppedObjects.Clear();
 
           
-          StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
-           StartCoroutine(MoveToPosition(wrapper, newPosition, movement)); 
+                StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
+                StartCoroutine(MoveToPosition(wrapper, newPosition, movement)); 
+
+
+
+
+
+
+
+
 
             }
 
