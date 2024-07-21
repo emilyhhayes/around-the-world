@@ -23,6 +23,7 @@ public class ingredientManager : MonoBehaviour
     
     public dragDrop dragDrop; 
     public List<GameObject> droppedObjects = new List<GameObject>();
+    public List<GameObject> dumplingFilling; 
 
     public Vector3 newPosition;
     public float movement = 2.5f;
@@ -115,10 +116,10 @@ public class ingredientManager : MonoBehaviour
                     Destroy(obj);
                 }
 
-                // Clear the lists after hiding the objects
+
                 droppedIngredients.Clear();
                 droppedObjects.Clear();
-            //wrapper.transform.position = new Vector3(2.44f, 2.03f, -0.04822773f); // Example new position
+
           
           StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
            StartCoroutine(MoveToPosition(wrapper, newPosition, movement)); 
