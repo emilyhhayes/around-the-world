@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using TMPro;
 using UnityEngine;
 
 public class dragDrop : MonoBehaviour
@@ -10,9 +11,12 @@ public class dragDrop : MonoBehaviour
     public GameObject mince;
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
-    public ingredientManager ingredientManager;
-  
+     public ingredientManager ingredientManager;
 
+    public Vector3 targetPosition;
+    public float tolerance = 0.1f;
+
+    public GameObject[] hideIngredients;
 
     void Awake() {
         _originalPosition = transform.position;
@@ -23,7 +27,7 @@ public class dragDrop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -71,10 +75,21 @@ public class dragDrop : MonoBehaviour
             string ingredientName = crackedEggPrefab.GetComponent<ingredientObject>().ingredientData.ingredientName;
             Debug.Log(ingredientName);
             ingredientManager.addIngredients(ingredientName, crackedEggPrefab);
-        
-
 
             CompareIngredients();
+
+         
+
+            if (isAtPosition(crackedEggPrefab, targetPosition, tolerance))
+            {
+
+                foreach (GameObject obj in hideIngredients)
+                {
+                    obj.SetActive(false);
+                }
+            }
+
+            
 
         }
         else
@@ -104,7 +119,12 @@ public class dragDrop : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    bool isAtPosition(GameObject obj, Vector3 targetPos, float tolerance)
+    {
+        float distance = Vector3.Distance(obj.transform.position, targetPos);
 
+        return distance <= tolerance;
+    }
 }
 
 
