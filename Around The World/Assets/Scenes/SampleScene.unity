@@ -1463,6 +1463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401778804}
   - component: {fileID: 1401778803}
+  - component: {fileID: 1401778805}
   m_Layer: 0
   m_Name: ingredientManager
   m_TagString: Untagged
@@ -1497,6 +1498,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   wrapper: {fileID: 2000927945}
   assembleArea: {fileID: 1353324488}
+  waterRing: {fileID: 772246808}
   dragDrop: {fileID: 0}
   droppedObjects: []
   dumplingFilling:
@@ -1504,6 +1506,8 @@ MonoBehaviour:
   - {fileID: 258792873}
   - {fileID: 2000927945}
   newPosition: {x: 2.44, y: 2.03, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  tolerance: 0.1
   movement: 1.5
 --- !u!4 &1401778804
 Transform:
@@ -1520,6 +1524,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1401778805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401778802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def3b244c959d834d8b5fa92198d4568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wrapper: {fileID: 2000927945}
+  fillingBall: {fileID: 258792873}
+  waterRing: {fileID: 1546450381}
+  targetPosition: {x: 0.02020597, y: 9.2, z: 0}
+  tolerance: 0.1
+  hideIngredients:
+  - {fileID: 772246808}
+  - {fileID: 2000927945}
+  - {fileID: 258792873}
 --- !u!1 &1480342631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2259443355086593053, guid: 439cdc9c24c3e564ca3c731dc28b021c, type: 3}
@@ -1860,6 +1885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000927947}
   - component: {fileID: 2000927946}
+  - component: {fileID: 2000927948}
   m_Layer: 0
   m_Name: wrapper
   m_TagString: Untagged
@@ -1934,6 +1960,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2000927948
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000927945}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.5, y: 2.5}
+    newSize: {x: 2.5, y: 2.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.05, y: 2.05}
+  m_EdgeRadius: 0
 --- !u!1001 &2049131952
 PrefabInstance:
   m_ObjectHideFlags: 0

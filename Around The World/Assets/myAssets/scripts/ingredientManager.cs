@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,6 +20,7 @@ public class ingredientManager : MonoBehaviour
     public GameObject mince;
     public GameObject wrapper;
     public GameObject assembleArea;
+    public GameObject waterRing;
  
     
     public dragDrop dragDrop; 
@@ -27,17 +28,18 @@ public class ingredientManager : MonoBehaviour
     public List<GameObject> dumplingFilling; 
 
     public Vector3 newPosition;
+    public Vector3 targetPosition;
+    public float tolerance = 0.1f;
     public float movement = 2.5f;
 
-    private Collider2D wrapperCollider;
-    private Collider2D assembleAreaCollider;
-    private bool isMouseHeldDown;
 
 
     void Start()
     {
-        
+
     }
+
+
 
     private void Awake()
     {
@@ -52,6 +54,9 @@ public class ingredientManager : MonoBehaviour
 
     private void Update()
     {
+       
+
+
         spawnRecipeTimer -= Time.deltaTime;
         if (spawnRecipeTimer <= 0f)
         {
@@ -75,16 +80,7 @@ public class ingredientManager : MonoBehaviour
 
             }
         }
-
-        if (Input.GetMouseButton(0))
-        {
-            isMouseHeldDown = true; 
-        }
-
-        else
-        {
-            isMouseHeldDown = false;
-        }
+      
 
     }
 
@@ -145,8 +141,7 @@ public class ingredientManager : MonoBehaviour
                 StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
                 StartCoroutine(MoveToPosition(wrapper, newPosition, movement)); 
 
-
-
+              
 
 
 
@@ -178,6 +173,9 @@ public class ingredientManager : MonoBehaviour
 
         obj.transform.position = target;
     }
+
+    
+
 
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
