@@ -9,6 +9,7 @@ public class ingredientManager : MonoBehaviour
 
     [SerializeField] private recipeListSO recipeListSO;
     [SerializeField] public ingredientSO minceIngredientSO;
+    [SerializeField] private recipesSO assembleCheck;
 
     private List<recipesSO> waitingRecipeSOList;
     private float spawnRecipeTimer;
@@ -21,7 +22,9 @@ public class ingredientManager : MonoBehaviour
     public GameObject wrapper;
     public GameObject assembleArea;
     public GameObject waterRing;
- 
+    public GameObject dumpling;
+
+
     
     public dragDrop dragDrop; 
     public List<GameObject> droppedObjects = new List<GameObject>();
@@ -32,11 +35,12 @@ public class ingredientManager : MonoBehaviour
     public float tolerance = 0.1f;
     public float movement = 2.5f;
 
+    public string stage = "prep";
 
 
     void Start()
     {
-
+        
     }
 
 
@@ -101,13 +105,14 @@ public class ingredientManager : MonoBehaviour
 
     }
 
-    public void CheckIngredients()
+
+    public void checkPrep()
     {
         foreach (recipesSO recipe in waitingRecipeSOList)
         {
-            Debug.Log("checkingrecipe" +  recipe.recipeName);
+            Debug.Log("checkingrecipe" + recipe.recipeName);
 
-            
+
             bool allMatch = true;
 
             for (int i = 0; i < recipe.ingredientSOList.Count; i++)
@@ -117,7 +122,7 @@ public class ingredientManager : MonoBehaviour
                 if (!droppedIngredients.Contains(recipeIngredient))
                 {
                     allMatch = false; break;
-                   
+
                 }
             }
 
@@ -128,7 +133,7 @@ public class ingredientManager : MonoBehaviour
 
                 fillingBall.SetActive(true);
 
-                 foreach (GameObject obj in droppedObjects)
+                foreach (GameObject obj in droppedObjects)
                 {
                     Destroy(obj);
                 }
@@ -137,17 +142,10 @@ public class ingredientManager : MonoBehaviour
                 droppedIngredients.Clear();
                 droppedObjects.Clear();
 
-          
+               
                 StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
-                StartCoroutine(MoveToPosition(wrapper, newPosition, movement)); 
-
-              
-
-
-
-
-
-
+                StartCoroutine(MoveToPosition(wrapper, newPosition, movement));
+                stage = "assemble";
             }
 
             else
@@ -156,6 +154,37 @@ public class ingredientManager : MonoBehaviour
 
 
             }
+        }
+    }
+
+
+    public void checkAssembly()
+    {
+
+        wrapper.SetActive(false);
+        waterRing.SetActive(false);
+        fillingBall.SetActive(false);
+        dumpling.SetActive(true);
+
+ 
+
+
+
+
+
+    }
+
+
+    public void CheckIngredients()
+    {
+        if (stage == "prep")
+        {
+            checkPrep();
+        }
+        else if (stage == "assemble")
+        {
+            Debug.Log("Im going to check the assemply");
+            checkAssembly();
         }
     }
 

@@ -300,6 +300,7 @@ MonoBehaviour:
   mince: {fileID: 2000927945}
   crackedEggPrefab: {fileID: 1546450381}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -404,6 +405,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1566645669}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -653,6 +655,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 258792873}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -1020,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6062827447302505936, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6062827447302505936, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1065,6 +1068,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1210311670615214257, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1546450388}
+    - targetCorrespondingSourceObject: {fileID: 1210311670615214257, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1546450391}
   m_SourcePrefab: {fileID: 100100000, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
 --- !u!1 &629947979 stripped
 GameObject:
@@ -1197,6 +1203,7 @@ MonoBehaviour:
   mince: {fileID: 2000927945}
   crackedEggPrefab: {fileID: 1546450381}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0.02020597, y: 9.2, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -1305,6 +1312,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1574786271}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -1504,6 +1512,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 847316494}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -1625,12 +1634,14 @@ MonoBehaviour:
   - {fileID: 104399050}
   recipeListSO: {fileID: 11400000, guid: fdef07921cc02404c9b47085d51c1a22, type: 2}
   minceIngredientSO: {fileID: 11400000, guid: 435eba2b4bfabc840b28e0f2d6735ffb, type: 2}
+  assembleCheck: {fileID: 0}
   droppedIngredients: []
   fillingBall: {fileID: 258792873}
   mince: {fileID: 1022771133}
   wrapper: {fileID: 2000927945}
   assembleArea: {fileID: 1353324488}
   waterRing: {fileID: 772246808}
+  dumpling: {fileID: 104399050}
   dragDrop: {fileID: 0}
   droppedObjects: []
   dumplingFilling:
@@ -1641,6 +1652,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   movement: 1.5
+  stage: prep
 --- !u!4 &1401778804
 Transform:
   m_ObjectHideFlags: 0
@@ -1688,6 +1700,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 1480342631}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -1814,6 +1827,7 @@ MonoBehaviour:
   mince: {fileID: 2000927945}
   crackedEggPrefab: {fileID: 1546450381}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 2000927945}
   targetPosition: {x: 0.02020597, y: 9.2, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -1829,6 +1843,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3b244c959d834d8b5fa92198d4568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1546450391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546450381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d183823fcefc9e24e8119535e8b9b2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientData: {fileID: 11400000, guid: 49ef945b62c031b418d541362e13ada5, type: 2}
 --- !u!1 &1566645669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5970813795921228728, guid: bf8f3a9ddc6a40441b42a07e94b789c6, type: 3}
@@ -1909,6 +1936,7 @@ MonoBehaviour:
   mince: {fileID: 1022771133}
   crackedEggPrefab: {fileID: 629947979}
   ingredientManager: {fileID: 0}
+  wrapper: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   tolerance: 0.1
   hideIngredients: []
@@ -2453,7 +2481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6062827447302505936, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6062827447302505936, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}
       propertyPath: m_LocalRotation.w

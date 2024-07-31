@@ -12,6 +12,7 @@ public class dragDrop : MonoBehaviour
     private bool mouseHeldDown = false;
     public GameObject crackedEggPrefab;
      public ingredientManager ingredientManager;
+    public GameObject wrapper;
 
     public Vector3 targetPosition;
     public float tolerance = 0.1f;
@@ -78,7 +79,6 @@ public class dragDrop : MonoBehaviour
 
             CompareIngredients();
 
-         
 
             if (isAtPosition(crackedEggPrefab, targetPosition, tolerance))
             {
