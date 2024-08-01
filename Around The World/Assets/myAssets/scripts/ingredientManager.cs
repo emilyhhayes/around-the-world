@@ -166,9 +166,9 @@ public class ingredientManager : MonoBehaviour
         fillingBall.SetActive(false);
         dumpling.SetActive(true);
 
- 
+        Destroy(assembleArea);
 
-
+        //stage = "cook";
 
 
 
@@ -183,10 +183,21 @@ public class ingredientManager : MonoBehaviour
         }
         else if (stage == "assemble")
         {
-            Debug.Log("Im going to check the assemply");
             checkAssembly();
         }
+        //else if (stage == "cook")
+        //{
+
+       // }
     }
+
+
+    public string GetStage()
+    {
+        return stage;
+     
+    }
+
 
  IEnumerator MoveToPosition(GameObject obj, Vector3 target, float movement)
     {
@@ -204,7 +215,6 @@ public class ingredientManager : MonoBehaviour
     }
 
     
-
 
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

@@ -40,6 +40,11 @@ public class dragDrop : MonoBehaviour
         var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         transform.position = mousePosition - _offset;
+
+        if (ingredientManager != null)
+        {
+            //string stage = ingredientManager.instance.GetStage(); 
+        }
     }
 
     void OnMouseDown() {
@@ -125,6 +130,11 @@ public class dragDrop : MonoBehaviour
 
         return distance <= tolerance;
     }
+
+  
+
+
+
 }
 
 
