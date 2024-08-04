@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ingredientManager : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class ingredientManager : MonoBehaviour
     public float movement = 2.5f;
 
     public string stage = "prep";
+    public static ingredientManager instance;
 
 
     void Start()
@@ -53,6 +56,12 @@ public class ingredientManager : MonoBehaviour
         {
             obj.SetActive(false);
         }
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+
     }
 
 
@@ -150,8 +159,9 @@ public class ingredientManager : MonoBehaviour
 
             else
             {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
-
+                
 
             }
         }
@@ -168,8 +178,7 @@ public class ingredientManager : MonoBehaviour
 
         Destroy(assembleArea);
 
-        //stage = "cook";
-
+        stage = "cook";
 
 
     }
@@ -185,12 +194,17 @@ public class ingredientManager : MonoBehaviour
         {
             checkAssembly();
         }
-        //else if (stage == "cook")
-        //{
-
-       // }
+        else if (stage == "cook")
+        {
+            Debug.Log("hmmmm");
+         }
     }
 
+
+    public void setStage(string cook)
+    {
+        stage = cook;
+    }
 
     public string GetStage()
     {

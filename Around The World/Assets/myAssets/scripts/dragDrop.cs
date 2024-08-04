@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using TMPro;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class dragDrop : MonoBehaviour
@@ -41,10 +42,7 @@ public class dragDrop : MonoBehaviour
 
         transform.position = mousePosition - _offset;
 
-        if (ingredientManager != null)
-        {
-            //string stage = ingredientManager.instance.GetStage(); 
-        }
+
     }
 
     void OnMouseDown() {
@@ -94,7 +92,24 @@ public class dragDrop : MonoBehaviour
                 }
             }
 
-            
+            if (ingredientManager != null)
+            {
+                string stage = ingredientManager.instance.GetStage();
+
+                if (stage == "cook")
+                {
+                    ingredientManager.instance.setStage("newStage");
+                    Debug.Log(ingredientManager.instance.GetStage());
+
+                    string currentStage = ingredientManager.instance.GetStage();
+                    if (currentStage == "newStage")
+                    {
+                        Debug.Log("yaybro");
+                    }
+
+
+                }
+            }
 
         }
         else
