@@ -98,11 +98,11 @@ public class dragDrop : MonoBehaviour
 
                 if (stage == "cook")
                 {
-                    ingredientManager.instance.setStage("newStage");
+                    ingredientManager.instance.setStage("cook");
                     Debug.Log(ingredientManager.instance.GetStage());
 
                     string currentStage = ingredientManager.instance.GetStage();
-                    if (currentStage == "newStage")
+                    if (currentStage == "cook")
                     {
                         Debug.Log("yaybro");
                     }
