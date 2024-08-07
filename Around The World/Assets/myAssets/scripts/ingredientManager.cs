@@ -25,7 +25,8 @@ public class ingredientManager : MonoBehaviour
     public GameObject assembleArea;
     public GameObject waterRing;
     public GameObject dumpling;
-    public GameObject button; 
+    public GameObject button;
+    public GameObject correctText;
 
 
     
@@ -154,6 +155,8 @@ public class ingredientManager : MonoBehaviour
 
                     droppedIngredients.Clear();
                     droppedObjects.Clear();
+
+                    correctText.SetActive(true);
 
                 
                     StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));

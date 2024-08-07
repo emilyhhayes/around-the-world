@@ -104,7 +104,7 @@ public class dragDrop : MonoBehaviour
                     string currentStage = ingredientManager.instance.GetStage();
                     if (currentStage == "cook")
                     {
-                        Debug.Log("yaybro");
+                       
                     }
 
 
