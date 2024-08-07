@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -25,6 +25,7 @@ public class ingredientManager : MonoBehaviour
     public GameObject assembleArea;
     public GameObject waterRing;
     public GameObject dumpling;
+    public GameObject button; 
 
 
     
@@ -117,53 +118,58 @@ public class ingredientManager : MonoBehaviour
 
     public void checkPrep()
     {
-        foreach (recipesSO recipe in waitingRecipeSOList)
+        if (droppedIngredients.Count == 2)
         {
-            Debug.Log("checkingrecipe" + recipe.recipeName);
 
-
-            bool allMatch = true;
-
-            for (int i = 0; i < recipe.ingredientSOList.Count; i++)
+             foreach (recipesSO recipe in waitingRecipeSOList)
             {
-                string recipeIngredient = recipe.ingredientSOList[i].ingredientName;
+                Debug.Log("checkingrecipe" + recipe.recipeName);
 
-                if (!droppedIngredients.Contains(recipeIngredient))
+
+                bool allMatch = true;
+
+                for (int i = 0; i < recipe.ingredientSOList.Count; i++)
                 {
-                    allMatch = false; break;
+                    string recipeIngredient = recipe.ingredientSOList[i].ingredientName;
 
-                }
-            }
+                    if (!droppedIngredients.Contains(recipeIngredient))
+                    {
+                        allMatch = false; break;
 
-            if (allMatch)
-            {
-                Debug.Log("All dropped ingredients match the recipe: " + recipe.recipeName);
-
-
-                fillingBall.SetActive(true);
-
-                foreach (GameObject obj in droppedObjects)
-                {
-                    Destroy(obj);
+                    }
                 }
 
+                if (allMatch)
+                {
+                    Debug.Log("All dropped ingredients match the recipe: " + recipe.recipeName);
 
-                droppedIngredients.Clear();
-                droppedObjects.Clear();
 
-               
-                StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
-                StartCoroutine(MoveToPosition(wrapper, newPosition, movement));
-                stage = "assemble";
-            }
+                    fillingBall.SetActive(true);
 
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
+                    foreach (GameObject obj in droppedObjects)
+                    {
+                        Destroy(obj);
+                    }
+
+
+                    droppedIngredients.Clear();
+                    droppedObjects.Clear();
+
                 
+                    StartCoroutine(MoveToPosition(fillingBall, newPosition, movement));
+                    StartCoroutine(MoveToPosition(wrapper, newPosition, movement));
+                    stage = "assemble";
+                }
 
-            }
+                else
+                {
+                    button.SetActive(true);
+                    Debug.Log("Some dropped ingredients do not match the recipe: " + recipe.recipeName);
+                    
+
+                }
+
+            }    
         }
     }
 
