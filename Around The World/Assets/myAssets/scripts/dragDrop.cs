@@ -14,6 +14,7 @@ public class dragDrop : MonoBehaviour
     public GameObject crackedEggPrefab;
      public ingredientManager ingredientManager;
     public GameObject wrapper;
+    public GameObject tick;
 
     public Vector3 targetPosition;
     public float tolerance = 0.1f;
@@ -104,7 +105,7 @@ public class dragDrop : MonoBehaviour
                     string currentStage = ingredientManager.instance.GetStage();
                     if (currentStage == "cook")
                     {
-                       
+                        tick.SetActive(true);
                     }
 
 

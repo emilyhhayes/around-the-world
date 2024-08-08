@@ -27,6 +27,7 @@ public class ingredientManager : MonoBehaviour
     public GameObject dumpling;
     public GameObject button;
     public GameObject correctText;
+    public GameObject tickButton;
 
 
     
@@ -95,7 +96,6 @@ public class ingredientManager : MonoBehaviour
 
             }
         }
-      
 
     }
 
@@ -184,10 +184,9 @@ public class ingredientManager : MonoBehaviour
         waterRing.SetActive(false);
         fillingBall.SetActive(false);
         dumpling.SetActive(true);
+        tickButton.SetActive(true);
 
         Destroy(assembleArea);
-
-        stage = "cook";
 
 
     }
@@ -203,10 +202,7 @@ public class ingredientManager : MonoBehaviour
         {
             checkAssembly();
         }
-        else if (stage == "cook")
-        {
-            Debug.Log("hmmmm");
-         }
+
     }
 
 
