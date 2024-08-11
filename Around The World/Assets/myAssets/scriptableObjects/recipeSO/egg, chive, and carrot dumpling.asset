@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0139f270273648b4380fb90da685ecb9, type: 3}
-  m_Name: dumplingOne
+  m_Name: egg, chive, and carrot dumpling
   m_EditorClassIdentifier: 
   ingredientSOList:
   - {fileID: 11400000, guid: 00c1cc976a4b7dd4e9837866e307d527, type: 2}
   - {fileID: 11400000, guid: 3528818d7464ceb4f91f3f787a4223c8, type: 2}
-  recipeName: dumplingOne
+  - {fileID: 11400000, guid: 4291173cff0d48b4eaf7b49000ff9e18, type: 2}
+  recipeName: egg, chive, and carrot dumpling

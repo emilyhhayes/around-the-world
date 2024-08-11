@@ -119,7 +119,7 @@ public class ingredientManager : MonoBehaviour
 
     public void checkPrep()
     {
-        if (droppedIngredients.Count == 2)
+        if (droppedIngredients.Count == 3)
         {
 
              foreach (recipesSO recipe in waitingRecipeSOList)
