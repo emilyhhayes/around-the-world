@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e8ba3e98234f341a958fe075dc334a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1085248755}
+  recipeNameText: {fileID: 1085248755}
 --- !u!1 &772246808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1210311670615214257, guid: 15c60ecd8ff38e14fb93cafcf94d392f, type: 3}

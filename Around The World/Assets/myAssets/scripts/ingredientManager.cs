@@ -233,7 +233,14 @@ public class ingredientManager : MonoBehaviour
         obj.transform.position = target;
     }
 
-    
-
+ public string GetCurrentRecipeName()
+{
+    if (waitingRecipeSOList.Count > 0)
+    {
+        return waitingRecipeSOList[0].recipeName; // Return the recipe name of the first recipe in the list
+    }
+    return "No recipe waiting"; // Return a default message if no recipes are waiting
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
