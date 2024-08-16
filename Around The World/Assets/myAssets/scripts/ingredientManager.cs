@@ -14,8 +14,6 @@ public class ingredientManager : MonoBehaviour
     [SerializeField] private recipesSO assembleCheck;
 
     private List<recipesSO> waitingRecipeSOList;
-    private float spawnRecipeTimer;
-    private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 1;
     public List<string> droppedIngredients = new List<string>();
     
@@ -70,32 +68,11 @@ public class ingredientManager : MonoBehaviour
 
     private void Update()
     {
-       
+
+        printRecipe();
 
 
-        spawnRecipeTimer -= Time.deltaTime;
-        if (spawnRecipeTimer <= 0f)
-        {
-            spawnRecipeTimer = spawnRecipeTimerMax;
-
-
-            if (waitingRecipeSOList.Count < waitingRecipesMax)
-            {
-                recipesSO waitingRecipeSO = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
-                Debug.Log(waitingRecipeSO.recipeName);
-
-
-                for (int i=0; i < waitingRecipeSO.ingredientSOList.Count; i++)
-                {
-                    Debug.Log(waitingRecipeSO.ingredientSOList[i].ingredientName);
-                }
-
-                waitingRecipeSOList.Add(waitingRecipeSO);
-
-
-
-            }
-        }
+        
 
     }
 
@@ -172,7 +149,7 @@ public class ingredientManager : MonoBehaviour
 
                 }
 
-            }    
+             }    
         }
     }
 
@@ -233,14 +210,31 @@ public class ingredientManager : MonoBehaviour
         obj.transform.position = target;
     }
 
- public string GetCurrentRecipeName()
-{
-    if (waitingRecipeSOList.Count > 0)
+
+    public void printRecipeIngredients()
     {
-        return waitingRecipeSOList[0].recipeName; // Return the recipe name of the first recipe in the list
+        recipesSO waitingRecipeSO = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
+
+        for (int i = 0; i < waitingRecipeSO.ingredientSOList.Count; i++)
+        {
+            Debug.Log(waitingRecipeSO.ingredientSOList[i].ingredientName);
+        }
     }
-    return "No recipe waiting"; // Return a default message if no recipes are waiting
-}
+
+    private void printRecipe()
+    {
+
+        if (waitingRecipeSOList.Count < waitingRecipesMax)
+        {
+            recipesSO waitingRecipeSO = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
+            Debug.Log(waitingRecipeSO.recipeName);
 
 
+
+            waitingRecipeSOList.Add(waitingRecipeSO);
+
+
+
+        }
+    }
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
